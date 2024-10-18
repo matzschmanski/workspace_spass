@@ -67,3 +67,46 @@ button:hover {
 section {
     animation: fadeIn 1s ease-in-out;
 }
+
+/* Styles for the new quests section */
+#quests {
+    background-color: #e0f7fa;
+    border: 1px solid #00acc1;
+}
+
+#quests h2 {
+    color: #00796b;
+}
+
+#quest-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#quest-list li {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#quest-list button {
+    background-color: #00796b;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 5px 2px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#quest-list button:hover {
+    background-color: #004d40;
+}

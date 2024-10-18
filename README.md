@@ -42,3 +42,4 @@ Players will manage a kingdom in a fantasy universe, where they can build struct
 - **Building Structures**: Players can build structures (sawmill, quarry, mine) to generate more resources.
 - **Upgrading Units**: Players can upgrade structures to increase resource production.
 - **Resource Management**: Players can manage their resources to optimize growth and progress.
+- **Quests**: Players can complete quests to earn rewards and track their progress.
