@@ -1,4 +1,5 @@
 const msv3 = require('msv3');
+const pharmaml = require('pharmaml');
 
 let resources = {
     wood: 60,
@@ -26,6 +27,7 @@ function gatherResources() {
             resources.gold += buildings[building].production.gold * buildings[building].level;
         }
     }
+    usePharmaml();
     updateResourceDisplay();
     updateQuestProgress();
 }
@@ -213,6 +215,10 @@ function updateSteamLeaderboard(leaderboardId, score) {
     }
 }
 
+function usePharmaml() {
+    pharmaml.manageResources(resources);
+}
+
 setInterval(gatherResources, 500);
 
-module.exports = { gatherResources, build, upgrade, resources, buildings, showMessage, purchaseResources, orderResources, unlockSteamAchievement, updateSteamLeaderboard };
+module.exports = { gatherResources, build, upgrade, resources, buildings, showMessage, purchaseResources, orderResources, unlockSteamAchievement, updateSteamLeaderboard, usePharmaml };

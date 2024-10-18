@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-const { gatherResources, build, upgrade, resources, buildings, showMessage, purchaseResources, orderResources } = require('../script');
+const { gatherResources, build, upgrade, resources, buildings, showMessage, purchaseResources, orderResources, usePharmaml } = require('../script');
 
 describe('gatherResources', () => {
     beforeEach(() => {
@@ -29,6 +29,13 @@ describe('gatherResources', () => {
         expect(resources.wood).toBe(0);
         expect(resources.stone).toBe(0);
         expect(resources.gold).toBe(0);
+    });
+
+    test('should call usePharmaml after gathering resources', () => {
+        const usePharmamlMock = jest.fn();
+        usePharmaml.mockImplementation(usePharmamlMock);
+        gatherResources();
+        expect(usePharmamlMock).toHaveBeenCalled();
     });
 });
 
@@ -151,5 +158,14 @@ describe('orderResources', () => {
     test('should order gold and update resources', async () => {
         await orderResources('gold');
         expect(resources.gold).toBe(25);
+    });
+});
+
+describe('usePharmaml', () => {
+    test('should call pharmaml.manageResources with the correct resources', () => {
+        const manageResourcesMock = jest.fn();
+        pharmaml.manageResources = manageResourcesMock;
+        usePharmaml();
+        expect(manageResourcesMock).toHaveBeenCalledWith(resources);
     });
 });
