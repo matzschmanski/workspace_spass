@@ -35,10 +35,10 @@ function build(building) {
             buildings[building].level++;
             updateResourceDisplay();
         } else {
-            alert("Not enough resources to build " + building);
+            showMessage("Not enough resources to build " + building);
         }
     } else {
-        alert("The building already exists.");
+        showMessage("The building already exists.");
     }
 }
 
@@ -54,7 +54,7 @@ function upgrade(building) {
         buildings[building].level++;
         updateResourceDisplay();
     } else {
-        alert("Not enough resources to upgrade " + building);
+        showMessage("Not enough resources to upgrade " + building);
     }
 }
 
@@ -141,11 +141,33 @@ function updateQuestProgress() {
                 resources.wood += quests[quest].reward.wood;
                 resources.stone += quests[quest].reward.stone;
                 resources.gold += quests[quest].reward.gold;
-                alert(`Quest completed! Reward: Wood: ${quests[quest].reward.wood}, Stone: ${quests[quest].reward.stone}, Gold: ${quests[quest].reward.gold}`);
+                showMessage(`Quest completed! Reward: Wood: ${quests[quest].reward.wood}, Stone: ${quests[quest].reward.stone}, Gold: ${quests[quest].reward.gold}`);
             }
         }
     }
     updateQuestDisplay();
 }
 
+function showMessage(message) {
+    const messageBox = document.getElementById('custom-message-box');
+    if (messageBox) {
+        messageBox.innerText = message;
+        messageBox.style.display = 'block';
+        setTimeout(hideMessageBox, 3000);
+    } else {
+        console.error('Custom message box element not found');
+    }
+}
+
+function hideMessageBox() {
+    const messageBox = document.getElementById('custom-message-box');
+    if (messageBox) {
+        messageBox.style.display = 'none';
+    } else {
+        console.error('Custom message box element not found');
+    }
+}
+
 setInterval(gatherResources, 500);
+
+module.exports = { gatherResources, build, upgrade, resources, buildings, showMessage };

@@ -1,0 +1,15 @@
+{
+  "name": "html-idle-game",
+  "version": "1.0.0",
+  "description": "A resource gathering and management game",
+  "main": "index.html",
+  "scripts": {
+    "test": "jest"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^27.0.0"
+  },
+  "author": "",
+  "license": "ISC"
+}
