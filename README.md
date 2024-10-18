@@ -43,3 +43,16 @@ Players will manage a kingdom in a fantasy universe, where they can build struct
 - **Upgrading Units**: Players can upgrade structures to increase resource production.
 - **Resource Management**: Players can manage their resources to optimize growth and progress.
 - **Quests**: Players can complete quests to earn rewards and track their progress.
+
+## Running Tests
+
+To run the unit tests for the game, follow these steps:
+
+1. Ensure you have Node.js installed on your machine.
+2. Navigate to the root directory of the project in your terminal.
+3. Run `npm install` to install the necessary dependencies.
+4. Run `npm test` to execute the unit tests using Jest.
+
+## Continuous Integration
+
+This project uses GitHub Actions for continuous integration. The CI pipeline is configured to run the tests on every pull request and merge to the main branch. The configuration file for the GitHub Actions workflow can be found at `.github/workflows/ci.yml`.
