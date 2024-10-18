@@ -47,6 +47,18 @@
             <div id="story-cards"></div>
             <button id="load-more">Load More</button>
         </section>
+        <section id="statistics">
+            <h2>Game Statistics</h2>
+            <p>Total Resources Gathered: <span id="total-resources">0</span></p>
+            <p>Total Buildings Constructed: <span id="total-buildings">0</span></p>
+            <p>Total Upgrades Performed: <span id="total-upgrades">0</span></p>
+        </section>
+        <section id="settings">
+            <h2>Game Settings</h2>
+            <button onclick="resetGame()">Reset Game</button>
+            <button onclick="saveGame()">Save Game</button>
+            <button onclick="loadGame()">Load Game</button>
+        </section>
     </main>
     <script src="script.js"></script>
 </body>
