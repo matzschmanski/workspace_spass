@@ -83,3 +83,25 @@ describe('upgrade', () => {
         expect(resources.wood).toBe(5);
     });
 });
+
+describe('showMessage', () => {
+    test('should display the custom message box with the given message', () => {
+        document.body.innerHTML = '<div id="custom-message-box" style="display: none;"></div>';
+        const showMessage = require('../script').showMessage;
+        showMessage('Test message');
+        const messageBox = document.getElementById('custom-message-box');
+        expect(messageBox.style.display).toBe('block');
+        expect(messageBox.innerText).toBe('Test message');
+    });
+
+    test('should hide the custom message box after 3 seconds', (done) => {
+        document.body.innerHTML = '<div id="custom-message-box" style="display: none;"></div>';
+        const showMessage = require('../script').showMessage;
+        showMessage('Test message');
+        setTimeout(() => {
+            const messageBox = document.getElementById('custom-message-box');
+            expect(messageBox.style.display).toBe('none');
+            done();
+        }, 3000);
+    });
+});
