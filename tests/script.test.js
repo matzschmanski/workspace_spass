@@ -1,4 +1,4 @@
-const { gatherResources, build, upgrade, resources, buildings } = require('../script');
+const { gatherResources, build, upgrade, resources, buildings, showMessage } = require('../script');
 
 describe('gatherResources', () => {
     beforeEach(() => {
@@ -87,7 +87,6 @@ describe('upgrade', () => {
 describe('showMessage', () => {
     test('should display the custom message box with the given message', () => {
         document.body.innerHTML = '<div id="custom-message-box" style="display: none;"></div>';
-        const showMessage = require('../script').showMessage;
         showMessage('Test message');
         const messageBox = document.getElementById('custom-message-box');
         expect(messageBox.style.display).toBe('block');
@@ -96,7 +95,6 @@ describe('showMessage', () => {
 
     test('should hide the custom message box after 3 seconds', (done) => {
         document.body.innerHTML = '<div id="custom-message-box" style="display: none;"></div>';
-        const showMessage = require('../script').showMessage;
         showMessage('Test message');
         setTimeout(() => {
             const messageBox = document.getElementById('custom-message-box');

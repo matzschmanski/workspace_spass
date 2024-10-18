@@ -157,4 +157,4 @@ function showMessage(message) {
 
 setInterval(gatherResources, 500);
 
-module.exports = { gatherResources, build, upgrade, resources, buildings };
+module.exports = { gatherResources, build, upgrade, resources, buildings, showMessage };
