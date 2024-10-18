@@ -1,7 +1,7 @@
 let resources = {
-    wood: 30,
-    stone: 15,
-    gold: 10
+    wood: 60,
+    stone: 30,
+    gold: 20
 };
 
 let buildings = {
