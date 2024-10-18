@@ -5,7 +5,8 @@
   "main": "index.html",
   "scripts": {
     "test": "jest",
-    "build-steam": "npm run build && steamcmd +login <username> <password> +run_app_build <path_to_steamworks_build_script> +quit"
+    "build-steam": "npm run build && steamcmd +login <username> <password> +run_app_build <path_to_steamworks_build_script> +quit",
+    "order": "node order.js"
   },
   "dependencies": {},
   "devDependencies": {
