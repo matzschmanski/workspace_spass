@@ -1,3 +1,5 @@
+const msv3 = require('msv3');
+
 let resources = {
     wood: 60,
     stone: 30,
@@ -168,9 +170,9 @@ function hideMessageBox() {
     }
 }
 
-function purchaseResources(resource) {
-    mockPayment().then(success => {
-        if (success) {
+function orderResources(resource) {
+    return msv3.order(resource).then(response => {
+        if (response.success) {
             if (resource === 'wood') {
                 resources.wood += 100;
             } else if (resource === 'stone') {
@@ -179,18 +181,18 @@ function purchaseResources(resource) {
                 resources.gold += 25;
             }
             updateResourceDisplay();
-            showMessage(`Purchased ${resource}!`);
+            showMessage(`Ordered ${resource} via msv3!`);
         } else {
-            showMessage('Payment failed. Please try again.');
+            showMessage('Ordering via msv3 failed. Please try again.');
         }
     });
 }
 
-function mockPayment() {
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            resolve(true);
-        }, 1000);
+function purchaseResources(resource) {
+    orderResources(resource).then(success => {
+        if (!success) {
+            showMessage('Ordering via msv3 failed. Please try again.');
+        }
     });
 }
 
@@ -213,4 +215,4 @@ function updateSteamLeaderboard(leaderboardId, score) {
 
 setInterval(gatherResources, 500);
 
-module.exports = { gatherResources, build, upgrade, resources, buildings, showMessage, purchaseResources, mockPayment, unlockSteamAchievement, updateSteamLeaderboard };
+module.exports = { gatherResources, build, upgrade, resources, buildings, showMessage, purchaseResources, orderResources, unlockSteamAchievement, updateSteamLeaderboard };

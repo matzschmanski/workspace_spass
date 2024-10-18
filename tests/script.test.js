@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-const { gatherResources, build, upgrade, resources, buildings, showMessage, purchaseResources, mockPayment } = require('../script');
+const { gatherResources, build, upgrade, resources, buildings, showMessage, purchaseResources, orderResources } = require('../script');
 
 describe('gatherResources', () => {
     beforeEach(() => {
@@ -131,9 +131,25 @@ describe('purchaseResources', () => {
     });
 });
 
-describe('mockPayment', () => {
-    test('should resolve to true', async () => {
-        const result = await mockPayment();
-        expect(result).toBe(true);
+describe('orderResources', () => {
+    beforeEach(() => {
+        resources.wood = 0;
+        resources.stone = 0;
+        resources.gold = 0;
+    });
+
+    test('should order wood and update resources', async () => {
+        await orderResources('wood');
+        expect(resources.wood).toBe(100);
+    });
+
+    test('should order stone and update resources', async () => {
+        await orderResources('stone');
+        expect(resources.stone).toBe(50);
+    });
+
+    test('should order gold and update resources', async () => {
+        await orderResources('gold');
+        expect(resources.gold).toBe(25);
     });
 });

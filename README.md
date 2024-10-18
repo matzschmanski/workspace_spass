@@ -35,6 +35,10 @@ Players will manage a kingdom in a fantasy universe, where they can build struct
 2. Open the `index.html` file in your web browser.
 3. The game will start automatically, and resources will be gathered over time.
 4. Use the buttons to build and upgrade structures or units to optimize your resource generation and progress.
+5. To order resources via msv3, run the following command:
+   ```
+   npm run order
+   ```
 
 ## Implemented Features
 
