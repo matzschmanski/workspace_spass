@@ -168,6 +168,32 @@ function hideMessageBox() {
     }
 }
 
+function purchaseResources(resource) {
+    mockPayment().then(success => {
+        if (success) {
+            if (resource === 'wood') {
+                resources.wood += 100;
+            } else if (resource === 'stone') {
+                resources.stone += 50;
+            } else if (resource === 'gold') {
+                resources.gold += 25;
+            }
+            updateResourceDisplay();
+            showMessage(`Purchased ${resource}!`);
+        } else {
+            showMessage('Payment failed. Please try again.');
+        }
+    });
+}
+
+function mockPayment() {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve(true);
+        }, 1000);
+    });
+}
+
 setInterval(gatherResources, 500);
 
-module.exports = { gatherResources, build, upgrade, resources, buildings, showMessage };
+module.exports = { gatherResources, build, upgrade, resources, buildings, showMessage, purchaseResources, mockPayment };

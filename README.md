@@ -43,6 +43,7 @@ Players will manage a kingdom in a fantasy universe, where they can build struct
 - **Upgrading Units**: Players can upgrade structures to increase resource production.
 - **Resource Management**: Players can manage their resources to optimize growth and progress.
 - **Quests**: Players can complete quests to earn rewards and track their progress.
+- **Mini Transactions**: Players can purchase resources (wood, stone, gold) through mini transactions. These transactions are currently mocked and do not involve real payment providers.
 
 ## Running Tests
 
@@ -56,3 +57,7 @@ To run the unit tests for the game, follow these steps:
 ## Continuous Integration
 
 This project uses GitHub Actions for continuous integration. The CI pipeline is configured to run the tests on every pull request and merge to the main branch. The configuration file for the GitHub Actions workflow can be found at `.github/workflows/ci.yml`.
+
+## Mini Transactions
+
+Mini transactions allow players to purchase additional resources (wood, stone, gold) to boost their progress in the game. These transactions are currently mocked and do not involve real payment providers. Players can use the mini transaction buttons in the game interface to purchase resources and enhance their gameplay experience.
