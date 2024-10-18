@@ -150,13 +150,22 @@ function updateQuestProgress() {
 
 function showMessage(message) {
     const messageBox = document.getElementById('custom-message-box');
-    messageBox.innerText = message;
-    messageBox.style.display = 'block';
-    setTimeout(hideMessageBox, 3000);
+    if (messageBox) {
+        messageBox.innerText = message;
+        messageBox.style.display = 'block';
+        setTimeout(hideMessageBox, 3000);
+    } else {
+        console.error('Custom message box element not found');
+    }
 }
 
 function hideMessageBox() {
-    document.getElementById('custom-message-box').style.display = 'none';
+    const messageBox = document.getElementById('custom-message-box');
+    if (messageBox) {
+        messageBox.style.display = 'none';
+    } else {
+        console.error('Custom message box element not found');
+    }
 }
 
 setInterval(gatherResources, 500);
