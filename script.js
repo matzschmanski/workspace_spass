@@ -1,7 +1,7 @@
 let resources = {
-    wood: 0,
-    stone: 0,
-    gold: 0
+    wood: 30,
+    stone: 15,
+    gold: 10
 };
 
 let buildings = {
@@ -63,4 +63,4 @@ function updateResourceDisplay() {
     document.getElementById("gold").innerText = resources.gold;
 }
 
-setInterval(gatherResources, 1000);
+setInterval(gatherResources, 500);
