@@ -39,6 +39,7 @@ Players will manage a kingdom in a fantasy universe, where they can build struct
    ```
    npm run order
    ```
+6. To use PharmAML for resource management, ensure you have the `pharmaml` package installed and follow the instructions in the "PharmAML Integration" section.
 
 ## Implemented Features
 
@@ -81,3 +82,7 @@ To publish the game on Steam, follow these steps:
 ## Steam Integration
 
 The game now includes Steam integration, allowing players to access Steam features such as achievements and leaderboards. The Steam API has been integrated into the game, and the necessary code changes have been made to support these features. Players can now enjoy the game on Steam and take advantage of the additional functionality provided by the Steam platform.
+
+## PharmAML Integration
+
+The game now includes PharmAML integration for enhanced resource management. PharmAML is a powerful tool that helps manage resources more efficiently. The necessary code changes have been made to support this integration. Players can now enjoy the benefits of PharmAML in the game.
