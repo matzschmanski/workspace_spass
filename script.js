@@ -149,3 +149,5 @@ function updateQuestProgress() {
 }
 
 setInterval(gatherResources, 500);
+
+module.exports = { gatherResources, build, upgrade, resources, buildings };
