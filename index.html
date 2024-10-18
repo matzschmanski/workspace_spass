@@ -5,6 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resource Gathering and Management Game</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://steamcommunity-a.akamaihd.net/public/javascript/steamworks_sdk.js"></script>
+    <script>
+        // Initialize Steam API
+        window.onload = function() {
+            if (typeof Steamworks !== 'undefined') {
+                Steamworks.init();
+            } else {
+                console.error('Steamworks SDK not loaded');
+            }
+        };
+    </script>
 </head>
 <body>
     <header>

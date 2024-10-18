@@ -194,6 +194,23 @@ function mockPayment() {
     });
 }
 
+// Steam API integration functions
+function unlockSteamAchievement(achievementId) {
+    if (typeof Steamworks !== 'undefined') {
+        Steamworks.unlockAchievement(achievementId);
+    } else {
+        console.error('Steamworks SDK not loaded');
+    }
+}
+
+function updateSteamLeaderboard(leaderboardId, score) {
+    if (typeof Steamworks !== 'undefined') {
+        Steamworks.setLeaderboardScore(leaderboardId, score);
+    } else {
+        console.error('Steamworks SDK not loaded');
+    }
+}
+
 setInterval(gatherResources, 500);
 
-module.exports = { gatherResources, build, upgrade, resources, buildings, showMessage, purchaseResources, mockPayment };
+module.exports = { gatherResources, build, upgrade, resources, buildings, showMessage, purchaseResources, mockPayment, unlockSteamAchievement, updateSteamLeaderboard };
