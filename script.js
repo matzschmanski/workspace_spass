@@ -155,6 +155,10 @@ function showMessage(message) {
     setTimeout(hideMessageBox, 3000);
 }
 
+function hideMessageBox() {
+    document.getElementById('custom-message-box').style.display = 'none';
+}
+
 setInterval(gatherResources, 500);
 
 module.exports = { gatherResources, build, upgrade, resources, buildings, showMessage };
