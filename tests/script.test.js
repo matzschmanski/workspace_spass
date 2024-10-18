@@ -1,3 +1,7 @@
+/**
+ * @jest-environment jsdom
+ */
+
 const { gatherResources, build, upgrade, resources, buildings, showMessage } = require('../script');
 
 describe('gatherResources', () => {
