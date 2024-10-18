@@ -87,3 +87,22 @@ function updateResourceDisplay() {
 }
 
 setInterval(gatherResources, 500);
+
+async function fetchStories() {
+    const response = await fetch('stories.json');
+    const stories = await response.json();
+    return stories;
+}
+
+async function loadMoreStories() {
+    const stories = await fetchStories();
+    const storyCards = document.getElementById('story-cards');
+    stories.forEach(story => {
+        const storyCard = document.createElement('div');
+        storyCard.classList.add('story-card');
+        storyCard.innerHTML = `<h3>${story.title}</h3><p>${story.content}</p>`;
+        storyCards.appendChild(storyCard);
+    });
+}
+
+document.getElementById('load-more').addEventListener('click', loadMoreStories);
