@@ -61,3 +61,19 @@ This project uses GitHub Actions for continuous integration. The CI pipeline is 
 ## Mini Transactions
 
 Mini transactions allow players to purchase additional resources (wood, stone, gold) to boost their progress in the game. These transactions are currently mocked and do not involve real payment providers. Players can use the mini transaction buttons in the game interface to purchase resources and enhance their gameplay experience.
+
+## Publishing the Game on Steam
+
+To publish the game on Steam, follow these steps:
+
+1. Create a Steamworks account and set up your game in the Steamworks dashboard.
+2. Integrate the Steam API into your game by following the Steamworks SDK documentation.
+3. Build your game for Steam using the provided build script in the `package.json` file.
+4. Upload the built game files to Steam using the Steamworks dashboard.
+5. Configure your game's store page, pricing, and other settings in the Steamworks dashboard.
+6. Submit your game for review and approval by the Steam team.
+7. Once approved, your game will be available for purchase and download on Steam.
+
+## Steam Integration
+
+The game now includes Steam integration, allowing players to access Steam features such as achievements and leaderboards. The Steam API has been integrated into the game, and the necessary code changes have been made to support these features. Players can now enjoy the game on Steam and take advantage of the additional functionality provided by the Steam platform.

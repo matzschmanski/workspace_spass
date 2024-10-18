@@ -4,7 +4,8 @@
   "description": "A resource gathering and management game",
   "main": "index.html",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build-steam": "npm run build && steamcmd +login <username> <password> +run_app_build <path_to_steamworks_build_script> +quit"
   },
   "dependencies": {},
   "devDependencies": {
