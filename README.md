@@ -28,3 +28,17 @@ Players will manage a kingdom in a fantasy universe, where they can build struct
 - Gather resources and use them to build and upgrade structures or units.
 - Complete quests and unlock achievements for rewards and benefits.
 - Track your progress and strive to complete all quests and achievements.
+
+## How to Run the Game
+
+1. Clone the repository to your local machine.
+2. Open the `index.html` file in your web browser.
+3. The game will start automatically, and resources will be gathered over time.
+4. Use the buttons to build and upgrade structures or units to optimize your resource generation and progress.
+
+## Implemented Features
+
+- **Resource Gathering**: Resources (wood, stone, gold) are gathered automatically over time.
+- **Building Structures**: Players can build structures (sawmill, quarry, mine) to generate more resources.
+- **Upgrading Units**: Players can upgrade structures to increase resource production.
+- **Resource Management**: Players can manage their resources to optimize growth and progress.

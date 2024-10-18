@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resource Gathering and Management Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Resource Gathering and Management Game</h1>
+    </header>
+    <main>
+        <section id="resources">
+            <h2>Resources</h2>
+            <p>Wood: <span id="wood">0</span></p>
+            <p>Stone: <span id="stone">0</span></p>
+            <p>Gold: <span id="gold">0</span></p>
+        </section>
+        <section id="buildings">
+            <h2>Buildings</h2>
+            <button onclick="build('sawmill')">Build Sawmill</button>
+            <button onclick="build('quarry')">Build Quarry</button>
+            <button onclick="build('mine')">Build Mine</button>
+        </section>
+        <section id="upgrades">
+            <h2>Upgrades</h2>
+            <button onclick="upgrade('sawmill')">Upgrade Sawmill</button>
+            <button onclick="upgrade('quarry')">Upgrade Quarry</button>
+            <button onclick="upgrade('mine')">Upgrade Mine</button>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
