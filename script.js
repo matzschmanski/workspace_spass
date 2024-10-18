@@ -10,6 +10,12 @@ let buildings = {
     mine: { level: 0, cost: { wood: 30, stone: 15, gold: 10 }, production: { wood: 0, stone: 0, gold: 1 } }
 };
 
+let quests = {
+    gatherWood: { description: "Gather 100 wood", target: 100, reward: { wood: 50, stone: 20, gold: 10 }, progress: 0, completed: false },
+    gatherStone: { description: "Gather 50 stone", target: 50, reward: { wood: 30, stone: 10, gold: 5 }, progress: 0, completed: false },
+    gatherGold: { description: "Gather 20 gold", target: 20, reward: { wood: 20, stone: 10, gold: 5 }, progress: 0, completed: false }
+};
+
 function gatherResources() {
     for (let building in buildings) {
         if (buildings[building].level > 0) {
@@ -19,6 +25,7 @@ function gatherResources() {
         }
     }
     updateResourceDisplay();
+    updateQuestProgress();
 }
 
 function build(building) {
@@ -84,6 +91,57 @@ function updateResourceDisplay() {
         document.getElementById(`${building}-benefit-stone`).innerText = buildings[building].production.stone;
         document.getElementById(`${building}-benefit-gold`).innerText = buildings[building].production.gold;
     }
+
+    updateQuestDisplay();
+}
+
+function updateQuestDisplay() {
+    let questList = document.getElementById("quest-list");
+    questList.innerHTML = "";
+
+    for (let quest in quests) {
+        let questItem = document.createElement("li");
+        questItem.innerText = `${quests[quest].description} - Progress: ${quests[quest].progress}/${quests[quest].target}`;
+        if (!quests[quest].completed) {
+            let startButton = document.createElement("button");
+            startButton.innerText = "Start Quest";
+            startButton.onclick = function() { startQuest(quest); };
+            questItem.appendChild(startButton);
+        } else {
+            questItem.innerText += " - Completed!";
+        }
+        questList.appendChild(questItem);
+    }
+}
+
+function startQuest(quest) {
+    if (!quests[quest].completed) {
+        quests[quest].progress = 0;
+        updateQuestDisplay();
+    }
+}
+
+function updateQuestProgress() {
+    for (let quest in quests) {
+        if (!quests[quest].completed) {
+            if (quest === "gatherWood") {
+                quests[quest].progress = resources.wood;
+            } else if (quest === "gatherStone") {
+                quests[quest].progress = resources.stone;
+            } else if (quest === "gatherGold") {
+                quests[quest].progress = resources.gold;
+            }
+
+            if (quests[quest].progress >= quests[quest].target) {
+                quests[quest].completed = true;
+                resources.wood += quests[quest].reward.wood;
+                resources.stone += quests[quest].reward.stone;
+                resources.gold += quests[quest].reward.gold;
+                alert(`Quest completed! Reward: Wood: ${quests[quest].reward.wood}, Stone: ${quests[quest].reward.stone}, Gold: ${quests[quest].reward.gold}`);
+            }
+        }
+    }
+    updateQuestDisplay();
 }
 
 setInterval(gatherResources, 500);
