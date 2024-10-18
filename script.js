@@ -29,12 +29,16 @@ function gatherResources() {
 }
 
 function build(building) {
-    if (canAfford(buildings[building].cost)) {
-        payCost(buildings[building].cost);
-        buildings[building].level++;
-        updateResourceDisplay();
+    if (buildings[building].level === 0) {
+        if (canAfford(buildings[building].cost)) {
+            payCost(buildings[building].cost);
+            buildings[building].level++;
+            updateResourceDisplay();
+        } else {
+            alert("Not enough resources to build " + building);
+        }
     } else {
-        alert("Not enough resources to build " + building);
+        alert("The building already exists.");
     }
 }
 
