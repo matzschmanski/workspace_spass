@@ -67,3 +67,61 @@ button:hover {
 section {
     animation: fadeIn 1s ease-in-out;
 }
+
+/* Styles for the fantasy-stories section and story cards */
+#fantasy-stories {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+
+#story-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.story-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    width: calc(33.333% - 20px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.story-card h3 {
+    margin-top: 0;
+}
+
+.story-card p {
+    margin-bottom: 0;
+}
+
+/* Styles for the Load More button */
+#load-more {
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 20px auto;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block;
+}
+
+#load-more:hover {
+    background-color: #45a049;
+}
